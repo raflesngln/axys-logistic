@@ -72,7 +72,7 @@ nav .brand-logo {
 }
 
 #floating-up:hover {
-  background-color: #D20000;
+  background-color: #C10000;
 }
 #top-menu{
 	transition:ease 0.5s;
@@ -292,7 +292,7 @@ window.onscroll = function() {scrollMenu();scrollFunction()};
 	function scrollFunction() {
 		
 		if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-			$("#floating-up").css({"display":"block","background":"red"});
+			$("#floating-up").css({"display":"block"});
 		} else {
 			$("#floating-up").css({"display":"none"});
 		}
