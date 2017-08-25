@@ -1,6 +1,6 @@
 <style>
 .box-card{
-	margin-bottom:10px;
+	margin-top:-150px !important;
 }
 </style>
 

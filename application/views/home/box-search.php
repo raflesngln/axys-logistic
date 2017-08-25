@@ -3,12 +3,12 @@
 	width:60%;
 }
 .box-search {
-    margin-top: -210px;
+    margin-top: -180px;
     z-index: 999 !important;
     background: rgb(255, 255, 255);
     /*box-shadow: 3px 5px 10px #d0d0d0;*/
 	box-shadow:3px 5px 10px rgba(0, 0, 0, 0.12);
-	min-height:400px;
+	min-height:280px;
 }
 .devider2{
 	display: block;
@@ -23,6 +23,7 @@
 	-ms-transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
 	transform: rotate(45deg);
+	border-radius:20px;
 
 }
 .btn-search{
@@ -48,13 +49,14 @@
 
 <div class="col col-md-4 devider2">&nbsp;</div>
 <div class="col col-md-4">
+<form method="post" action="javascript:void(0);" onsubmit="searchRate()" id="form_search">
 <div class="section box-search">
       <div class="row">
         <div class="col s12 m4">
           <div class="icon-block">
             
             <h5 class="left">From</h5>
-				<p><input name="origin" type="text" placeholder="origin" ></p>
+				<p><input name="origin" type="text" placeholder="origin" required="required" ></p>
           </div>
         </div>
 
@@ -63,7 +65,7 @@
            
             <h5 class="left">To</h5>
 
-            <p class="light"><input name="destination" type="text" placeholder=" destinaion"></p>
+            <p class="light"><input name="destination" type="text" placeholder=" destinaion" required="required"></p>
           </div>
         </div>
 
@@ -75,25 +77,38 @@
 
 <div class="row">
       
-        <div class="col s12 m8">
+        <div class="col s12 m4">
           <div class="icon-block">
            
             <h5 class="left">Type of Service</h5>
-    <select>
+    <select name="service_type" id="service_type" required>
       <option value="" disabled selected>Choose Service</option>
-      <option value="1">Air Freight</option>
-      <option value="2">Sea Freight</option>
-      <option value="3">Land </option>
+      <option value="Air Freight">Air Freight</option>
+      <option value="Sea Freight">Sea Freight</option>
+      <option value="Land">Land </option>
     </select>
     <label>Materialize Select</label>
           </div>
         </div>
 
 <div class="col s12 m4">
+<div class="icon-block">
+           <h5 class="left">Commodity</h5>
+    <select name="commodity" id="commodity" required>
+      <option value="" disabled selected>Choose Commodity</option>
+      <option value="Air Freight">Dangerous Dood</option>
+      <option value="Sea Freight">Ekspedisi</option>
+      <option value="Land">Cargo </option>
+    </select>
+    <label>Materialize Select</label>
+</div>
+</div>
+
+<div class="col s12 m4">
           <div class="icon-block">
            
-            <a class="waves-effect waves-light btn-large green btn-search"> 
-         <i class="material-icons md-24">search</i> Search</a>
+            <button type="submit"  class="waves-effect waves-light btn-large green btn-search"> 
+         <i class="material-icons md-24">search</i> Search</button>
             
             
           </div>
@@ -107,6 +122,8 @@
       
       
     </div>
+    </form>
+    <!--buat form-->
     </div>
     
     <script>
@@ -121,6 +138,52 @@
 		  });
   
   	   $('select').material_select();
-  
     });
+
+function searchRate222(){
+          //swal_process();
+		  var id='';
+          url = '<?php echo base_url();?>home/Home/search_rate';
+          $.ajax({
+            url : url,
+            type: "POST",
+            data: $('#form_search').serialize(),
+            dataType: "JSON",
+            success: function(data)
+            {
+				toContent();
+				console.log('sukses');
+            },
+            error: function (jqXHR, textStatus, errorThrown)
+            {
+                //swal("Oops... Something went wrong!", "Proses Invalid!", "error");
+				return false;
+            }
+        });    
+}
+
+function searchRate(){
+	swal_process();
+            $.ajax({
+                type: "POST",
+                url : "<?php echo base_url('home/Home/search_rate');?>",
+				data: $('#form_search').serialize(),
+                cache:false,
+                success: function(data){
+					swal.close();
+					$('#content-body').html(data);
+					toContent();
+                }
+            });
+ }
+ 
+function swal_process(){
+	swal({
+		title:'<div class="md-preloader"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="96" width="96" viewBox="0 0 75 75"><circle cx="37.5" cy="37.5" r="33.5" stroke-width="4"></circle></svg></div>',
+		text:'<p>Loading Content.......</p>',
+		showConfirmButton:false,
+		//type:"success",
+		html:true
+		});
+}
 	</script>

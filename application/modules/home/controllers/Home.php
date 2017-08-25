@@ -15,23 +15,26 @@ class Home extends CI_Controller{
     
   function index(){
 	$data=array(
-	'title'=>'Xsys Logistic'
+	'title'=>'Xsys Logistic',
+	'content'=>'home/content-body'
 	);
       $this->load->view('home/index',$data);
  }
 
-  function download_xl_report(){
-	  $tanggal=$this->input->post('tgl1');
-	  $kategori=$this->input->post('kategori');
-	  $tabel=$this->input->post('tabel');
-	  $mawb=$this->input->post('mawb');
-	  $txtsearch=$this->input->post('txtsearch');
-	  
-	  if($kategori=='release'){
-		  $this->release_excel($tanggal,$tabel);
-	  } else {
-		  $this->non_release_excel($tanggal,$tabel,$mawb,$txtsearch);
-	  }
+  function search_rate(){
+	
+	$origin=$this->input->post('origin');
+	$destination=$this->input->post('destination');
+	$service_type=$this->input->post('service_type');
+	
+	$data=array(
+		'title'=>'Search Result',
+		'subtitle'=>$origin.' - '.$destination,
+		'service_type'=>$service_type,
+	);
+	
+	$this->load->view('home/result_search',$data);
+	return true;
 		
 }
  

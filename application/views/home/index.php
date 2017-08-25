@@ -12,7 +12,10 @@
   <link href="<?php echo base_url();?>asset/font-awesome-4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   
 <!-- tambahan -->
-
+<!--sweetalert-->
+<link rel="stylesheet" href="<?php echo base_url();?>asset/sweetalert/dist/sweetalert.css" media="all">
+     <script src="<?php echo base_url();?>asset/sweetalert/dist/sweetalert.min.js"></script>
+     
     <!-- uikit -->
     <link rel="stylesheet" href="<?php echo base_url();?>asset/bower_components/uikit/css/uikit.almost-flat.css" media="all">
     <!-- altair admin -->
@@ -25,17 +28,18 @@
     
     
   <style>
+
   .dropdown-content {
     margin-top: 40px;
 }
   .slider{
 	  z-index:-1;
+	 
   }
 .img-slider{
 	max-width:100%;
 	max-height:100%;
 	background-size:contain !important;
-
   }
 
 nav .brand-logo {
@@ -77,16 +81,31 @@ nav .brand-logo {
 #top-menu{
 	transition:ease 0.5s;
 }
+.logo-img{
+	height: 48px !important;
+    width: 180px !important;
+	transition:ease 0.5s;
+}
+.logo-img2{
+	height: 30px !important;
+    width: 110px !important;
+	transition:ease 0.5s;
+}
+
   </style>
   
 </head>
 <body>
   <nav class="green accent-4" role="navigation" id="top-menu">
-    <div class="nav-wrapper container"><a id="logo-container" href="<?php echo base_url();?>" class="brand-logo">XSYS LOGISTIC</a>
+    <div class="nav-wrapper container">
+    
+    <a id="logo-container" href="<?php echo base_url();?>" class="brand-logo">
+    <img src="<?php echo base_url();?>asset/images/xsys-logo.png" class="logo-img" id="imglogo">
+    </a>
       
       <!--for desktop-->
     <ul class="menu-center hide-on-med-and-down">
-      <li><a href="sass.html">Home</a></li>
+      <li><a href="<?php echo base_url();?>">Home</a></li>
       <li><a href="badges.html">What new's</a></li>
       <!-- Dropdown Trigger -->
       <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Promo<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -175,10 +194,10 @@ nav .brand-logo {
  
  <!--isi kontent body-->
 <div class="container">
-    <div class="section">
+    <div class="section" id="content-body">
 
       <!--   Icon Section   -->
-      <?php echo $this->load->view('home/content-body');?>
+      <?php echo $this->load->view($content);?>
      <!-- section end-->
 
     </div>
@@ -291,7 +310,7 @@ window.onscroll = function() {scrollMenu();scrollFunction()};
 	
 	function scrollFunction() {
 		
-		if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+		if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
 			$("#floating-up").css({"display":"block"});
 		} else {
 			$("#floating-up").css({"display":"none"});
@@ -300,19 +319,25 @@ window.onscroll = function() {scrollMenu();scrollFunction()};
 	
 	function scrollMenu() {
 		if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
-			$("#top-menu").css({"height":"45px"});
+			$("#top-menu").css({"height":"46px"});
 			$(".menu-center").css({"margin-top":"-8px"});
 			$(".log-sign").css({"margin-top":"-45px"});
+			$("#imglogo").removeClass('logo-img').addClass('logo-img2');
+	
 		} else {
 			$("#top-menu").css({"height":"66px"});
 			$(".menu-center").css({"margin-top":"2px"});
 			$(".log-sign").css({"margin-top":"-60px"});
+			$("#imglogo").removeClass('logo-img2').addClass('logo-img');
 		}
 	}	
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
 	 $('html,body').animate({scrollTop: 0}, 800);
+}
+function toContent() {
+	 $('html,body').animate({scrollTop: 500}, 800);
 }	
 </script>
   </body>
