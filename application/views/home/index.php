@@ -12,6 +12,10 @@
   <link href="<?php echo base_url();?>asset/font-awesome-4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   
 <!-- tambahan -->
+<!--Nprogress bar on top-->
+<link href='<?php echo base_url();?>asset/nprogress/nprogress.css' rel='stylesheet' />
+<script src='<?php echo base_url();?>asset/nprogress/nprogress.js'></script>
+
 <!--sweetalert-->
 <link rel="stylesheet" href="<?php echo base_url();?>asset/sweetalert/dist/sweetalert.css" media="all">
      <script src="<?php echo base_url();?>asset/sweetalert/dist/sweetalert.min.js"></script>
@@ -338,7 +342,10 @@ function topFunction() {
 }
 function toContent() {
 	 $('html,body').animate({scrollTop: 500}, 800);
-}	
+}
+
+    NProgress.start();
+    setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 1000);	
 </script>
   </body>
 </html>

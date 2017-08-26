@@ -45,6 +45,7 @@ hr.devider-style:after {
 
 <h3 align="center"><?php echo 'Result for '.$service_type.', '. $subtitle;?></h3>
 
+                    <br />
 
     <div class="row">
  <div class="uk-width-medium-1-1 uk-row-first">

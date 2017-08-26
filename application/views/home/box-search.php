@@ -8,7 +8,7 @@
     background: rgb(255, 255, 255);
     /*box-shadow: 3px 5px 10px #d0d0d0;*/
 	box-shadow:3px 5px 10px rgba(0, 0, 0, 0.12);
-	min-height:280px;
+	min-height:300px;
 }
 .devider2{
 	display: block;
@@ -52,7 +52,7 @@
 <form method="post" action="javascript:void(0);" onsubmit="searchRate()" id="form_search">
 <div class="section box-search">
       <div class="row">
-        <div class="col s12 m4">
+        <div class="col s12 m5">
           <div class="icon-block">
             
             <h5 class="left">From</h5>
@@ -60,7 +60,7 @@
           </div>
         </div>
 
-        <div class="col s12 m4">
+        <div class="col s12 m5">
           <div class="icon-block">
            
             <h5 class="left">To</h5>
@@ -77,7 +77,7 @@
 
 <div class="row">
       
-        <div class="col s12 m4">
+        <div class="col s12 m5">
           <div class="icon-block">
            
             <h5 class="left">Type of Service</h5>
@@ -91,24 +91,24 @@
           </div>
         </div>
 
-<div class="col s12 m4">
+<div class="col s12 m5">
 <div class="icon-block">
            <h5 class="left">Commodity</h5>
     <select name="commodity" id="commodity" required>
       <option value="" disabled selected>Choose Commodity</option>
       <option value="Air Freight">Dangerous Dood</option>
-      <option value="Sea Freight">Ekspedisi</option>
+      <option value="Sea Freight">Genco</option>
       <option value="Land">Cargo </option>
     </select>
     <label>Materialize Select</label>
 </div>
 </div>
 
-<div class="col s12 m4">
+<div class="col s12 m2">
           <div class="icon-block">
            
             <button type="submit"  class="waves-effect waves-light btn-large green btn-search"> 
-         <i class="material-icons md-24">search</i> Search</button>
+         <i class="material-icons md-24">search</i>&nbsp;</button>
             
             
           </div>
@@ -163,6 +163,7 @@ function searchRate222(){
 }
 
 function searchRate(){
+	NProgress.start();
 	swal_process();
             $.ajax({
                 type: "POST",
@@ -170,6 +171,7 @@ function searchRate(){
 				data: $('#form_search').serialize(),
                 cache:false,
                 success: function(data){
+					 setTimeout(function() { NProgress.done()}, 1000);
 					swal.close();
 					$('#content-body').html(data);
 					toContent();
