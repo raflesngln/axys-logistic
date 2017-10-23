@@ -33,13 +33,12 @@
     
   <style>
 
-  .dropdown-content {
+.dropdown-content {
     margin-top: 40px;
 }
-  .slider{
+ .slider{
 	  z-index:-1;
-	 
-  }
+ }
 .img-slider{
 	max-width:100%;
 	max-height:100%;
@@ -122,7 +121,7 @@ nav .brand-logo {
 
 		<!-- fro mobile -->
       <ul id="nav-mobile" class="side-nav">
-      <li><a href="sass.html">Homme</a></li>
+      <li><a href="sass.html">Home</a></li>
       <li><a href="badges.html">What new's</a></li>
       <!-- Dropdown Trigger -->
       <li><a class="dropdown-button" href="#!" data-activates="dropdown2">discount<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -293,35 +292,34 @@ nav .brand-logo {
     
 <script>
  $(document).ready(function(){
+	 //setting slides
       $('.slider').slider({
-	  	  height: 360,
+	  	  height: 460,
 		  interval:2000,
 		  transition:1000
-	  }
-	  );
+	  });
 	  
-	  var logoHeight = $('#myDiv img').height();
+var logoHeight = $('#myDiv img').height();
     if (logoHeight < 104) {
         var margintop = (104 - logoHeight) / 2;
         $('#myDiv img').css('margin-top', margintop);
     }
 	
 	
-    });
+});
         
 	<!--botton scroll up-->
 window.onscroll = function() {scrollMenu();scrollFunction()};
 	
-	function scrollFunction() {
-		
+function scrollFunction() {
 		if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
 			$("#floating-up").css({"display":"block"});
 		} else {
 			$("#floating-up").css({"display":"none"});
 		}
-	}	
+}	
 	
-	function scrollMenu() {
+function scrollMenu() {
 		if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
 			$("#top-menu").css({"height":"46px"});
 			$(".menu-center").css({"margin-top":"-8px"});
@@ -334,7 +332,7 @@ window.onscroll = function() {scrollMenu();scrollFunction()};
 			$(".log-sign").css({"margin-top":"-60px"});
 			$("#imglogo").removeClass('logo-img2').addClass('logo-img');
 		}
-	}	
+}	
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {

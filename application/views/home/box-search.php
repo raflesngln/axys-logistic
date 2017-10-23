@@ -3,12 +3,18 @@
 	width:60%;
 }
 .box-search {
-    margin-top: -180px;
+    margin-top: -200px;
     z-index: 999 !important;
     background: rgb(255, 255, 255);
     /*box-shadow: 3px 5px 10px #d0d0d0;*/
 	box-shadow:3px 5px 10px rgba(0, 0, 0, 0.12);
 	min-height:300px;
+	border-radius:6px;
+}
+.btn-cari{
+	margin-left:25%;
+	width:250px;
+	height:50px;
 }
 .devider2{
 	display: block;
@@ -28,6 +34,7 @@
 }
 .btn-search{
 	margin-top:-150px;
+	margin-left:-40px;
 }
 /*.box-search {
     margin-top: -200px;
@@ -40,14 +47,15 @@
 */
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
-    .btn-search{
+    .btn-cari{
 		margin-top:10px;
+		margin-left:5%;
     }
 }
 
 </style>
 
-<div class="col col-md-4 devider2">&nbsp;</div>
+<div class="col col-md-3 devider2">&nbsp;</div>
 <div class="col col-md-4">
 <form method="post" action="javascript:void(0);" onsubmit="searchRate()" id="form_search">
 <div class="section box-search">
@@ -77,48 +85,43 @@
 
 <div class="row">
       
-        <div class="col s12 m5">
-          <div class="icon-block">
-           
+<div class="col s12 m5">
+    <div class="icon-block">
             <h5 class="left">Type of Service</h5>
-    <select name="service_type" id="service_type" required>
-      <option value="" disabled selected>Choose Service</option>
-      <option value="Air Freight">Air Freight</option>
-      <option value="Sea Freight">Sea Freight</option>
-      <option value="Land">Land </option>
-    </select>
-    <label>Materialize Select</label>
-          </div>
-        </div>
+            <select name="service_type" id="service_type" required>
+              <option value="" disabled selected>Choose Service</option>
+              <option value="Air Freight">Air Freight</option>
+              <option value="Sea Freight">Sea Freight</option>
+              <option value="Land">Land </option>
+            </select>
+            <label>Materialize Select</label>
+   </div>
+</div>
 
 <div class="col s12 m5">
-<div class="icon-block">
+	<div class="icon-block">
            <h5 class="left">Commodity</h5>
-    <select name="commodity" id="commodity" required>
-      <option value="" disabled selected>Choose Commodity</option>
-      <option value="Air Freight">Dangerous Dood</option>
-      <option value="Sea Freight">Genco</option>
-      <option value="Land">Cargo </option>
-    </select>
-    <label>Materialize Select</label>
+            <select name="commodity" id="commodity" required>
+              <option value="" disabled selected>Choose Commodity</option>
+              <option value="Air Freight">Dangerous Dood</option>
+              <option value="Sea Freight">Genco</option>
+              <option value="Land">Cargo </option>
+            </select>
+            <label>Materialize Select</label>
+	</div>
 </div>
-</div>
 
-<div class="col s12 m2">
-          <div class="icon-block">
-           
-            <button type="submit"  class="waves-effect waves-light btn-large green btn-search"> 
-         <i class="material-icons md-24">search</i>&nbsp;</button>
-            
-            
-          </div>
-        </div>
-        
 
-                
-        
-      </div>
 
+         
+<div class="col s12 m12">
+    <div class="icon-block">
+    <button type="submit" class="md-btn md-btn-danger md-btn-mini btn-cari"><i class="material-icons md-24">search</i>&nbsp; Cari Tarif</button>
+    </div>
+    </div>  
+         
+     </div>
+<!-- end of box search -->
       
       
     </div>
