@@ -3,7 +3,7 @@
 
 .howto li{
     height: 130px;
-    border-left:2px #9E9E9E solid;
+    border-left:2px #da937c solid;
 	margin-top:3px;
 }
 
@@ -13,17 +13,36 @@
     border-radius: 100px;
     background-color: #FF5722;
     color: #FFF;
-    padding: 16px 0px 0px 20px;
+	font-family:"Lucida Console", Monaco, monospace;
+	font-size:large;
+    padding: 13px 0px 0px 18px;
     margin-left: -27px;
     box-shadow: 4px 3px 15px #907f79;
 }
 .howcontent{
-background-color: #FFF;
-    margin-left: 5%;
+    background-color: #FFF;
+    margin-left: 6%;
     padding: 10px;
     margin-top: -8%;
+    box-shadow: 8px 5px 20px #d0c4c0;
+	border:none;
 }
-
+/* arrow */
+.howcontent::after{
+content: " ";
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color: #ffffff;
+    margin-left: -15px;
+    margin-top: -70px;
+    z-index: -1;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    /* border-radius: 200% 0px 0px 200%; */
+    /* border: 1px #FF5722 dotted; */
+}
 /* end of list history */
 
 hr.devider-style {
@@ -64,15 +83,26 @@ hr.devider-style:after {
     min-height: 242px;
     padding-top: 5px;
 }
+
+#aboutkanan{
+	padding:10px 8px 20px 10px;
+	background:white;
+	line-height:30px;
+}
+.img-about{
+	width:400px !important;
+	max-width: 130%;
+	height:280px;
+}
 </style>
 
 <div class="row">
-<hr class="devider-style">
+<!-- <hr class="devider-style"> -->
 </div>
 
 <div class="row">
-<h1 align="center" class="judul"> HOW TO USE OUR SERVICE  </h1>
-<hr style=" border:1px #795548 solid; width:120px; margin-left:45%" />
+<h2 align="right" class="judul"> HOW TO USE OUR SERVICE  </h2>
+<hr style=" border:1px #795548 solid; width:120px; float:right" />
 </div>   
     
 <!-- custom HOWTO-->
@@ -81,7 +111,7 @@ hr.devider-style:after {
 
 <div class="col s12 m3 howkiri">
 <div class=" col s10 m10">
-<img src="<?php echo base_url();?>asset/images/howto.png" width="320" height="620" />
+<img src="<?php echo base_url();?>asset/images/howto.png" width="320" height="420" />
 </div>
 </div>
     
@@ -133,13 +163,33 @@ hr.devider-style:after {
     </div>
 <!--end custom HOWTO-->
   
-<div class="row">
-<h1 align="center" class="judul"> OUR PARTNER  </h1>
-<hr style=" border:1px #795548 solid; width:120px; margin-left:45%" />
+  
+  <!-- ABOUT US-->
+ <div class="row">
+<div class="col s12 m8" id="aboutkanan">
+<h2>ABOUT US</h2>
+<hr style=" border:1px #795548 solid; width:120px;" />
+Kami membantu menangani logistik anda. Bagaimana caranya? Kami bekerjasama dengan penjual online ataupun perusahaan untuk menjemput barang yang akan dikirim dengan menggunakan jasa logistik yang terpilih. Shipper akan mengangkat tenaga manusia untuk menjadi armada kurir penjemput barang-barang tersebut. Dengan adanya Shipper, penjual online atau perusahaan mempunyai lebih banyak waktu untuk hal yang lebih penting, dan banyak kurir baru akan mendapatkan pekerjaan yang bisa membantu kehidupan mereka. Kalau Anda ingin berpartisipasi dalam membawa perubahan ke negara Indonesia, dengan memakai Shipper untuk jasa pengiriman, Anda sudah ikut berperan.    
 </div>
 
-    <div class="row">
+<div class="col s12 m4 aboutkanan">
+<div class=" col s10 m10">
+<img src="<?php echo base_url();?>asset/images/about_us.jpg" width="520" height="620" class="img img-about"/>
+</div>
+</div>
     
+          
+    
+          
+    </div>
+  <!-- END OF ABOUT US -->
+  
+
+<div class="row">
+  <div class="row">
+<h1 align="center" class="judul" style="margin-top:40px"> OUR PARTNER  </h1>
+<hr style=" border:1px #795548 solid; width:120px; margin-left:45%" />
+</div>  
  <div class="col s6 m2">
           <div class="card">
              <div class="card-content">

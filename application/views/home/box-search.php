@@ -111,7 +111,14 @@
 	</div>
 </div>
 
-
+<!-- CAPTCHA GOOGLE-->
+<div class="col s10 m10" style="padding-left:20px; margin-bottom:10px">
+<?php
+    $site_key = '6Lf2BC0UAAAAAHyE392Tif6AFzThAu2z2th3DDY8';
+?>
+<div class="g-recaptcha" hl="id" data-theme="light"  data-sitekey="<?php echo $site_key; ?>"></div>
+</div>
+<!-- END CAPTCHA GOOGLE-->  
 
          
 <div class="col s12 m12">
@@ -128,7 +135,10 @@
     </form>
     <!--buat form-->
     </div>
-    
+    <!-- Memuat API Google reCaptcha -->
+    <!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
+    <script src="https://www.google.com/recaptcha/api.js?hl=id" async defer></script>
+     
     <script>
 	$(document).ready(function(e) {
 		  $('.datepicker').pickadate({
@@ -143,30 +153,10 @@
   	   $('select').material_select();
     });
 
-function searchRate222(){
-          //swal_process();
-		  var id='';
-          url = '<?php echo base_url();?>home/Home/search_rate';
-          $.ajax({
-            url : url,
-            type: "POST",
-            data: $('#form_search').serialize(),
-            dataType: "JSON",
-            success: function(data)
-            {
-				toContent();
-				console.log('sukses');
-            },
-            error: function (jqXHR, textStatus, errorThrown)
-            {
-                //swal("Oops... Something went wrong!", "Proses Invalid!", "error");
-				return false;
-            }
-        });    
-}
+
 
 function searchRate(){
-	NProgress.start();
+	//NProgress.start();
 	swal_process();
             $.ajax({
                 type: "POST",
@@ -174,7 +164,7 @@ function searchRate(){
 				data: $('#form_search').serialize(),
                 cache:false,
                 success: function(data){
-					 setTimeout(function() { NProgress.done()}, 1000);
+					 //setTimeout(function() { NProgress.done()}, 1000);
 					swal.close();
 					$('#content-body').html(data);
 					toContent();

@@ -95,11 +95,14 @@ nav .brand-logo {
 	transition:ease 0.5s;
 }
 
+.mobile-apps li{
+	float:left;
+}
   </style>
   
 </head>
 <body>
-  <nav class="green accent-4" role="navigation" id="top-menu">
+  <nav class="teal" role="navigation" id="top-menu">
     <div class="nav-wrapper container">
     
     <a id="logo-container" href="<?php echo base_url();?>" class="brand-logo">
@@ -214,7 +217,7 @@ nav .brand-logo {
 </div>
 <!--floating btn up-->
 
-  <footer class="page-footer  green accent-4">
+  <footer class="page-footer  teal darken-2">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
@@ -247,8 +250,23 @@ nav .brand-logo {
             <li><a class="white-text" href="#!"><i class="fa fa-envelope"></i>&nbsp; admin@axys.com</a></li>
           </ul>
         </div>
+        
+<div class="col l5 s12 mobile-apps">
+          <h2 class="white-text" style="margin-top:20px; margin-bottom:-10px">Download Application:</h2>
+          <ul>
+      <li><a class="white-text" href="#!">
+      <img src="<?php echo base_url();?>asset/images/googleplay.png" style="height:70px; width:150px">
+      </a></li>
+            <li><a class="white-text" href="#!">
+      <img src="<?php echo base_url();?>asset/images/appstore.png" style="height:50px; width:150px; margin-top:10px">
+      </a></li>
+      
+          </ul>
+        </div>
+        
       </div>
     </div>
+    
     <div class="footer-copyright">
       <div class="container">
       Copy  Right &copy; <a class="orange-text text-lighten-3" href="http://axys.com">Axys Development</a>
