@@ -112,18 +112,17 @@
 </div>
 
 <!-- CAPTCHA GOOGLE-->
-<div class="col s10 m10" style="padding-left:20px; margin-bottom:10px">
+<div class="col s10 m4" style="padding-left:20px; margin-bottom:10px">
 <?php
     $site_key = '6Lf2BC0UAAAAAHyE392Tif6AFzThAu2z2th3DDY8';
 ?>
 <div class="g-recaptcha" hl="id" data-theme="light"  data-sitekey="<?php echo $site_key; ?>"></div>
 </div>
 <!-- END CAPTCHA GOOGLE-->  
-
-         
-<div class="col s12 m12">
+  
+<div class="col s12 m6">
     <div class="icon-block">
-    <button type="submit" class="md-btn md-btn-danger md-btn-mini btn-cari"><i class="material-icons md-24">search</i>&nbsp; Cari Tarif</button>
+    <button type="submit" class="md-btn md-btn-danger md-btn-mini btn-cari" style="height:70px !important"><i class="material-icons md-24">search</i>&nbsp; Cari Tarif</button>
     </div>
     </div>  
          
