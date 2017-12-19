@@ -16,7 +16,9 @@ class Home extends CI_Controller{
   function index(){
 	$data=array(
 	'title'=>'Xsys Logistic',
-	'content'=>'home/content-body'
+	'content'=>'home/content-body',
+	'boxsearch'=>'home/box-search',
+	'slider'=>'home/slider'
 	);
       $this->load->view('home/index',$data);
  }

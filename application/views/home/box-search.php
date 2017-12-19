@@ -155,7 +155,7 @@
 
 
 function searchRate(){
-	//NProgress.start();
+	NProgress.start();
 	swal_process();
             $.ajax({
                 type: "POST",
@@ -163,7 +163,7 @@ function searchRate(){
 				data: $('#form_search').serialize(),
                 cache:false,
                 success: function(data){
-					 //setTimeout(function() { NProgress.done()}, 1000);
+					 setTimeout(function() { NProgress.done()}, 1000);
 					swal.close();
 					$('#content-body').html(data);
 					toContent();

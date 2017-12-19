@@ -1,0 +1,47 @@
+/* Lets use a Google Web Font :) */
+@import url(http://fonts.googleapis.com/css?family=Finger+Paint);
+/* Basic CSS for positioning etc */
+body {
+	font-family: 'Finger Paint', cursive;
+	background-image: url('bg.jpg');
+}
+#frame {
+	width: 400px;
+	margin: auto;
+	margin-top: 125px;
+	border: solid 1px #CCC;
+	/* SOME CSS3 DIV SHADOW */
+	-webkit-box-shadow: 0px 0px 10px #CCC;
+    -moz-box-shadow: 0px 0px 10px #CCC;
+    box-shadow: 0px 0px 10px #CCC;
+    /* CSS3 ROUNDED CORNERS */
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #FFF;
+}
+#form1 {
+	padding: 20px;
+	min-height: 150px;
+}
+#form1 input {
+	width: 100%;
+}
+#form1 label {
+	width: 80px;
+}
+#form1 .controls {
+	margin-left: 110px;
+}
+#frame h1 {
+	padding: 20px;
+	padding-bottom: 0px;
+}
+#frame .alert {
+	margin: 10px;
+}
+#form1 .error {
+	border: solid 2px red;
+	color: red;
+}
